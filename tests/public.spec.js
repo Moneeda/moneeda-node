@@ -9,10 +9,6 @@ const moneedaToken = 'YOUR_MONEEDA_TOKEN'
 const moneeda = require('../src/index.js')
 const publicClient = new moneeda.PublicClient({token: moneedaToken});
 const privateClient = new moneeda.AuthenticatedClient({token: moneedaToken});
-// for (exchange in exchanges) {
-//   privateClient.setExchange({exchange: 'BTX', keys: {secret: 'xxxx', private: 'xxxx', passphrase: 'xxxx'}})
-//   privateClient.getBalance()
-// }
 
 
 describe('PublicClient', () => {

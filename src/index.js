@@ -1,4 +1,5 @@
 
 module.exports = exports = {
-  PublicClient: require('./public.js')
+  PublicClient: require('./public.js'),
+  AuthenticatedClient: require('./auth.js')
 };
