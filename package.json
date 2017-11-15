@@ -1,0 +1,33 @@
+{
+  "name": "moneeda-node",
+  "version": "1.0.0",
+  "description": "Official node.js library for Moneeda",
+  "main": "index.js",
+  "author": "Moneeda",
+  "license": "MIT",
+  "scripts": {
+    "init": "mkdir dist",
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean && npm run init",
+    "tests": "mocha --timeout=5000 --full-trace --bails --ui tdd --reporter spec tests/*.js",
+    "test": "mocha --timeout=15000 --full-trace --bails --ui tdd --reporter spec tests/*.js --grep"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3",
+    "nock": "^9.0.21",
+    "query-string": "^5.0.0",
+    "webpack": "^3.6.0"
+  },
+  "dependencies": {
+    "request": "^2.82.0",
+    "request-promise": "^4.2.2"
+  }
+}
