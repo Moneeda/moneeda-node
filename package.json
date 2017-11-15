@@ -1,6 +1,6 @@
 {
   "name": "moneeda-node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Official node.js library for Moneeda",
   "main": "index.js",
   "author": "Moneeda",
@@ -23,11 +23,11 @@
     "chai": "^4.1.2",
     "mocha": "^3.5.3",
     "nock": "^9.0.21",
-    "query-string": "^5.0.0",
     "webpack": "^3.6.0"
   },
   "dependencies": {
     "request": "^2.82.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "query-string": "^5.0.0"
   }
 }
