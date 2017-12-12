@@ -5,7 +5,7 @@ class PublicClient {
     this.exchange = exchange
     this.product = ''
     this.rest = new Rest(token)
-    this.baseUrl = 'http://localhost:4040/api/exchanges/'
+    this.baseUrl = 'https://api.moneeda.com/api/exchanges/'
   }
 
   setExchange (exchange) {

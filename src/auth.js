@@ -5,10 +5,10 @@ class AuthenticatedClient {
     this.exchange = exchange
     this.product = ''
     this.rest = new Rest(token).setAuthenticatedClientHeaders(keys)
-    this.baseUrl = 'http://localhost:4040/api/exchanges/'
+    this.baseUrl = 'https://api.moneeda.com/api/exchanges/'
   }
 
-  setExchange ({exchange, keys}) {
+  setExchange (exchange, keys) {
     if (!keys) {
       throw new Error('Missing auth keys')
     }

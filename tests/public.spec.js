@@ -4,17 +4,15 @@ const expect = chai.expect;
 const should = chai.should()
 const nock = require('nock');
 
-const moneedaToken = 'YOUR_MONEEDA_TOKEN'
+const moneedaToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBydWViYUBtb25lZWRhLmNvbSIsImlkIjoiNWEzMDBkNzhiZjc1OWU1ZDc2YjQ5MDJmIiwiaWF0IjoxNTEzMDk4NjczfQ.6D5i49Y4jZyEaeQR0MPkkFkC6y2XrjVUR10b4r5sMZI'
 
-const moneeda = require('../src/index.js')
-const publicClient = new moneeda.PublicClient({token: moneedaToken});
-const privateClient = new moneeda.AuthenticatedClient({token: moneedaToken});
-
+const Moneeda = require('../src/index.js')
+const moneeda = new Moneeda(moneedaToken)
 
 describe('PublicClient', () => {
 
   describe('Products retrieve an array of products', () => {
-
+    const publicClient = moneeda.public()
     it('BTX test', async () => {
       publicClient.setExchange('BTX')
       const btxTestResults = await publicClient.getProducts()
@@ -64,6 +62,7 @@ describe('PublicClient', () => {
   });
 
   describe('AllProductsTicker return all the tickers', () => {
+    const publicClient = moneeda.public()
     it('BTX test', async () => {
       publicClient.setExchange('BTX')
       const btxTickers = await publicClient.getAllProductsTicker()
@@ -104,6 +103,7 @@ describe('PublicClient', () => {
   })
 
   describe('ProductTicker return ticker for specific product', () => {
+    const publicClient = moneeda.public()
     it('BTX test', async () => {
       publicClient.setExchange('BTX')
       const btxTestResults = await publicClient.getProductTicker('BTC-ETH')
@@ -143,6 +143,7 @@ describe('PublicClient', () => {
   })
 
   describe('Candles return candles for specific exchange', () => {
+    const publicClient = moneeda.public()
     it('BTX test', async () => {
       publicClient.setExchange('BTX')
       const btxTestResults = await publicClient.getCandles('BTC-ETH')
