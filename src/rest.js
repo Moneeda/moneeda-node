@@ -37,7 +37,7 @@ class Rest {
 
   get (url, queryparams) {
     let uri = url + '?' + queryString.stringify(queryparams)
-    return this.call('GET', url)
+    return this.call('GET', uri)
   }
 
   post (url, opts) {
