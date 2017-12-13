@@ -12,16 +12,12 @@ class PublicClient {
     this.exchange = exchange
   }
 
-  setProduct (product) {
-    this.product = product
-  }
-
   /**
   * Returns a promise that resolves all
   * the products available for the defined exchange
   *
   */
-  getProducts () {
+  products () {
     let uri = this.baseUrl + this.exchange + '/products'
     return this.rest.get(uri)
   }
@@ -33,7 +29,7 @@ class PublicClient {
   * @returns {promise} ticker for an specific product
   */
 
-  getProductTicker (product) {
+  ticker (product) {
     let queryparams = {
       product
     }
@@ -46,7 +42,7 @@ class PublicClient {
   * all the available products
   */
 
-  getAllProductsTicker () {
+  allTickers () {
     let uri = this.baseUrl + this.exchange + '/alltickers'
     return this.rest.get(uri)
   }
@@ -58,7 +54,7 @@ class PublicClient {
   * @param {string} period - Period of the candles
   */
 
-  getCandles (product, period = '30m') {
+  candles (product, period = '30m') {
     let queryparams = {
       period,
       product
@@ -77,7 +73,7 @@ class PublicClient {
   * limit - The limit of trades, default to 100
   */
 
-  getTrades (product, params = {}) {
+  trades (product, params = {}) {
     let queryparams = {
       product,
       from: params.from,
@@ -96,7 +92,7 @@ class PublicClient {
   *
   */
 
-  getProductOrderBook (product, level) {
+  orderBook (product, level) {
     let queryparams = {
       product,
       level
